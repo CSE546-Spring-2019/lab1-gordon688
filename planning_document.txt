@@ -1,0 +1,60 @@
+Lab 1 - Planning Document
+——
+
+Steps needed:
+Get file name from args
+Open file
+Read from file - how many bytes at a time
+
+Get search string from args
+Get first letter of search string
+Iterate over first input bytes looking for first letter
+	if first letter is found does the next letter match
+		if not begin checking again for first letter
+	check each letter to see if it matches first letter
+		if yes store that position for reiteration later.
+			only store this once
+
+After each match begin searching for first letter again
+	if first letter position was saved at some point return to that position
+
+Once the bytes read have been integrated through read in more bytes until EOF
+
+At EOF close read file
+
+Open write file
+Write the count and bytes to write file
+Close write file
+
+Print count and bytes to command line
+
+End
+
+Keep a count of the number of times a word is found
+Keep a count of the number of bytes read
+
+
+Variables needed:
+	count
+	bytes
+	file name
+	file open
+	string from file read
+	search string
+	first letter of search string
+	next letter in search string
+	return to position
+	write file name
+	write file open
+
+Functions needed:
+	open file read
+	read bytes from file
+	close file read
+	open file write
+	write to file
+	close file write
+	main
+	search
+
+	
