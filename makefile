@@ -12,11 +12,14 @@ clean:
 	rm count
 
 test:
-	count testFiles/example1 "Sly Fox" example1out
-	count testFiles/example1 the example2out
-	count testFiles/example2 tomato example3out
-	count testFiles/example2 potato example4out
-	count testFiles/example3 the example5out
-	count testFiles/example3 "I want" example6out
-	count testFiles/example3 "I want to" example7out
-	count testFiles/example4 $$'f\xA' example8out
+	count testFiles/example1 "Sly Fox" exampleOutput/example1out
+	count testFiles/example1 the exampleOutput/example2out
+	count testFiles/example2 tomato exampleOutput/example3out
+	count testFiles/example2 potato exampleOutput/example4out
+	count testFiles/example3 the exampleOutput/example5out
+	count testFiles/example3 "I want" exampleOutput/example6out
+	count testFiles/example3 "I want to" exampleOutput/example7out
+	count testFiles/example4 $$'f\xA' exampleOutput/example8out
+
+verify:
+	$(CC) $(CFLAGS) -o check check.c
