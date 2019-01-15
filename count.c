@@ -7,6 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Function to search input file for search string and output results to output file and screen
 void search_file(char* searchstring, FILE *fr, FILE *fw);
 
 int main(int argc, char* argv[]) {
@@ -98,6 +99,7 @@ void search_file(char* searchstring, FILE *fr, FILE *fw) {
 	printf("Size of file is %i\n", fsize);
 	printf("Number of matches = %i\n", count);
 
+	// Print file size in bytes and number of matches to output file
 	fwrite(&fsize, sizeof(fsize), 1, fw);
 	fwrite(&count, sizeof(count), 1, fw);
 }
