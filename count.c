@@ -52,10 +52,10 @@ int main(int argc, char* argv[]) {
 void search_file(char* searchstring, FILE *fr, FILE *fw) {
 	unsigned char buffer[1];		// Buffer contatininf byte from file
 	char firstchar = searchstring[0];	// First char of the search string
-	int ret = 0;				// Return to positon for rescanning
-	int fsize = 0;				// Size of file in bytes
+	long ret = 0;				// Return to positon for rescanning
+	long fsize = 0;				// Size of file in bytes
 	int sub = 0;				// Current position in searchstring	
-	int count = 0;				// Number of strings found in fle
+	long count = 0;				// Number of strings found in fle
 	
 	// Find the size of the file in bytes
 	fseek(fr, 0, SEEK_END);
@@ -89,6 +89,7 @@ void search_file(char* searchstring, FILE *fr, FILE *fw) {
 			if(sub != 0 && ret == 0 && firstchar == (searchstring[sub] & 0xff)) {
 				ret = ftell(fr);
 			}
+
 		// Reset the search string to the beginning}
 		} else {
 			sub = 0;
@@ -96,8 +97,8 @@ void search_file(char* searchstring, FILE *fr, FILE *fw) {
 	}	
 	
 	// Print file size in bytes and number of matches to screen
-	printf("Size of file is %i\n", fsize);
-	printf("Number of matches = %i\n", count);
+	printf("Size of file is %ld\n", fsize);
+	printf("Number of matches = %ld\n", count);
 
 	// Print file size in bytes and number of matches to output file
 	fwrite(&fsize, sizeof(fsize), 1, fw);
