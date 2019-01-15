@@ -1,1 +1,0 @@
-Hello, World! This is a test file used for lab 1. There are an arbitrary number of bytes in this file.
